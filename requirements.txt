@@ -1,0 +1,10 @@
+python-dotenv
+google-generativeai
+Flask
+Flask-CORS
+transformers
+langchain
+langchain-huggingface
+torch 
+torchvision 
+torchaudio

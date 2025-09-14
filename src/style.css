@@ -1,0 +1,176 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+/* Floating Chat Icon */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #7a63d9 /* 7858ce */;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  z-index:9999;
+}
+
+#chatbot-icon:hover {
+  background-color: #7a63d9 /* 7858ce */;
+  transform: scale(1.1);
+}
+
+/* Chatbot Container */
+#chatbot-container {
+  position: fixed;
+  bottom: 40px /* 80px */;
+  right: 20px;
+  width: 500px;
+  height: 650px; /* 450px */
+  background-color: #f7eded /* 1f1f1f */;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index:9999;
+}
+
+/* Hide Chatbot Initially */
+.hidden {
+  display: none !important;
+}
+
+/* Chatbot Header */
+#chatbot-header {
+  background-color: #7a63d9 /* 7858ce */;
+  color: white;
+  padding: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  
+}
+
+#close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Chatbot Body */
+#chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Chatbot Messages */
+#chatbot-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.message.user {
+  background-color: rgb(243, 226, 226) /* 7858ce */;
+  color: black;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background-color: rgb(243, 226, 226) /* 7858ce */;
+  color: black;
+  align-self: flex-start;
+}
+
+/* Input container fills entire chatbot width */
+#chatbot-input-container {
+  display: flex;
+  width: 95%;
+  padding: 0;           /* remove padding so input can span edge-to-edge */
+  gap: 5px;             /* small space between input and button */
+  box-sizing: border-box;
+  background-color: #f7eded;
+}
+
+/* Input takes almost all space */
+#chatbot-input-container input {
+  flex: 1;              /* fills remaining space */
+  min-width: 0;         /* fixes flexbox shrinking bug */
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #444;
+  border-radius: 20px;  
+  background-color: #f7eded;
+  color: black;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* Send button stays small and overlay-like */
+#chatbot-input-container button {
+  flex: 0 0 auto;       /* keeps natural width */
+  width: 50px;          /* small square button */
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #7a63d9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#chatbot-input {
+  flex: 1;               /* take all remaining space in the container */
+  min-width: 0;          /* ensures it can shrink properly */
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #f7eded;
+  color: black !important;
+  box-sizing: border-box;
+}
+
+#send-btn {
+  flex: 0 0 auto;       /* button keeps its natural size */
+  padding: 12px 16px;
+  background-color: #7a63d9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#send-btn:hover {
+  background-color: #7a63d9 /* 7858ce */;
+}
