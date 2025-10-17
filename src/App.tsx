@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import logo from "./assets/Logo.png";
+import logo from "./assets/kolabratalogo.png";
 // import Chatbot from "./Chatbot";
 
 function App() {

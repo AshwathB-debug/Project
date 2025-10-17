@@ -1,48 +1,61 @@
-# import google.generativeai as genai
-from transformers import pipeline
+from llama_cpp import Llama
 
 
-def listOfExitWords(word):
-    words = ["exit", "quit", "goodbye", "bye"]
-    return word in words
+class LlamaGGUF:
+    
+    def config(self):
+        llm = Llama(
+            model_path = "C:/Users/ashwa/.cache/huggingface/hub/llamaQ4/llama-3-8b-instruct.Q4_K_M.gguf",
+            n_threads = 6,
+            verbose = False
+        )
+        # print(response["choices"][0]["text"])
+        return llm
 
 
-chatbot = pipeline("text-generation", model = "EleutherAI/gpt-neo-1.3B")
-
-chat_history = ""
-
-while True:
-    # Keep prompt simple to avoid repetition
-    prompt = f"The following is a helpful assistant answering questions politely.\nBot:"
-
-    # Generate response
-    response = chatbot(
-        prompt,
-        max_new_tokens = 100,
-        do_sample = True,
-        temperature = 0.8,
-        top_p = 0.9,
-        truncation = True
-    )
+    def listOfExitWords(self, word):
+        words = ["exit", "quit", "goodbye", "bye", "cya", "see ya"]
+        return word in words
     
     
-    user_input = input("You: ")
-    if listOfExitWords(user_input.lower()):
-        reply = response[0]["generated_text"].split("Bot:")[-1].strip()
+    def llama(self, user_input):
+        
+        try:
+            prompt = f"This is a friendly chatbot answering customers questions."
+
+            # Generate response
+            llm = self.config()
+            
+            response = llm(
+                prompt + "\n" + user_input, 
+                max_tokens = 150, 
+                temperature = 0.2
+            )
+            
+            reply = response["choices"][0]["text"]
+            return reply
+
+        except Exception as e:
+            print(f"An error occurred {e}")
+            return None
+        
+
+if __name__ == "__main__":
+    
+    model = LlamaGGUF()
+    while True:
+        
+        user_input = input("You: ")
+        reply = model.llama(user_input)
+        if model.listOfExitWords(user_input.lower()):
+            print("Bot:", reply)
+            break
         print("Bot:", reply)
-        break
-
-    reply = response[0]["generated_text"].split("Bot:")[-1].strip()
-    print("Bot:", reply)
-
-    # Update history (optional, keep small to avoid repetition loops)
-    chat_history = f"{chat_history[-500:]}\nBot: {reply}"
-
 
 
     
     
-
+# import google.generativeai as genai
 # class GeminiAPI:
     
 #     # Join words in the sentence from the generated output
