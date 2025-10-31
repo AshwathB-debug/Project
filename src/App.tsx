@@ -12,11 +12,11 @@ import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import logo from "./assets/kolabratalogo.png";
 import Chatbot from "./Chatbot";
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
-const [isOpen, setIsOpen] = useState(false);
-const mobileMenuButton = () => setIsOpen(!isOpen);
+// const [isOpen, setIsOpen] = useState(false);
+// const mobileMenuButton = () => setIsOpen(!isOpen);
 
 function calendly() {
   window.open("https://calendly.com/kolabrata/discover-kolabrata")
@@ -294,7 +294,7 @@ function App() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* <div className="md:hidden">
               <button 
               onClick = {mobileMenuButton}
               className="text-gray-700 hover:text-primary-600 transition-colors p-2">
@@ -312,7 +312,7 @@ function App() {
                   />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>
