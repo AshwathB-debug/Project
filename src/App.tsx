@@ -11,9 +11,49 @@ import {
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import logo from "./assets/kolabratalogo.png";
-// import Chatbot from "./Chatbot";
+import Chatbot from "./Chatbot";
+
+
+function calendly() {
+  window.open("https://calendly.com/kolabrata/discover-kolabrata")
+}
+
+function reload() {
+  window.location.reload();
+  window.scrollTo(0, 0);
+}
 
 function App() {
+  const services = [
+    {
+      title: "API Integration",
+      description: "Seamlessly connect your software systems and third-party applications through secure and efficient API integration. We ensure smooth data flow, automation, and enhanced functionality across all your platforms."
+    },
+    {
+      title: "Data Migration",
+      description: "Safely transfer your critical business data from legacy systems to modern platforms with minimal downtime and zero data loss. Our migration services focus on accuracy, consistency, and security throughout the process."
+    },
+    {
+      title: "Custom Application Development",
+      description: "Design and develop tailored applications that fit your unique business needs. From concept to deployment, we deliver scalable, high-performance solutions built for long-term success."
+    },
+  ];
+
+  const industries = [
+    {
+      title: "Supply Chain",
+      description: "Empowering logistics and supply chain operations with intelligent software solutions that improve visibility, automation, and data-driven decision-making."
+    },
+    {
+      title: "Flexible Work",
+      description: "Supporting the evolving workforce with technology that enhances collaboration, remote operations, and productivity for hybrid and flexible work environments."
+    },
+    {
+      title: "Healthcare",
+      description: "Delivering secure, compliant, and innovative digital solutions that streamline patient care, optimize data management, and support healthcare providers."
+    },
+  ];
+
   const valueProps = [
     {
       title: "Rapid Pilots",
@@ -198,13 +238,19 @@ function App() {
         <div className="container">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
-              <img
+              <img onClick = {reload}
                 src={logo}
                 alt="Kolabrate.co"
                 className=" sm:h-24 md:h-32 h-24 w-auto object-contain transition-all duration-200 filter drop-shadow-sm"
               />
             </div>
-            <div className="hidden md:flex items-center space-x-8">
+            <div className = "menu-bar hidden md:flex items-center space-x-8">
+              <a
+                href="#services"
+                className="text-gray-700 hover:text-primary-600 transition-colors"
+              >
+                Services
+              </a>
               <a
                 href="#value"
                 className="text-gray-700 hover:text-primary-600 transition-colors"
@@ -235,12 +281,12 @@ function App() {
               >
                 Pricing
               </a>
-              <a
+              {/* <a
                 href="#contact"
                 className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-md hover:bg-primary-700 transition-colors"
               >
                 Book Call
-              </a>
+              </a> */}
             </div>
 
             {/* Mobile menu button */}
@@ -262,9 +308,9 @@ function App() {
               </button>
             </div>
           </div>
-          {/* <Chatbot/> */}
         </div>
       </nav>
+      <Chatbot/>
 
       {/* Hero Section */}
       <header className="hero-gradient text-white relative overflow-hidden pt-20">
@@ -320,7 +366,10 @@ function App() {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-start items-center"
             >
-              <button className="btn-primary group">
+              <button 
+              onClick = {calendly}
+              className="btn-primary group">
+                
                 Get 15‑min Discovery Call
                 <svg
                   className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -341,6 +390,32 @@ function App() {
         </div>
       </header>
 
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-gray-50">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center mb-16">
+            Services We Offer
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((prop, index) => (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-card hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold mb-4 text-primary-800">
+                  {prop.title}
+                </h3>
+                <p className="text-gray-600">{prop.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Value Proposition Section */}
       <section id="value" className="py-20 bg-gray-50">
         <div className="container">
@@ -349,6 +424,32 @@ function App() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {valueProps.map((prop, index) => (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-card hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold mb-4 text-primary-800">
+                  {prop.title}
+                </h3>
+                <p className="text-gray-600">{prop.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section id="customers" className="py-20 bg-gray-50">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center mb-16">
+            Industries
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industries.map((prop, index) => (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -716,7 +817,9 @@ function App() {
             operations with AI-powered automation. Schedule a discovery call
             today to begin your journey towards autonomous operations.
           </p>
-          <button className="bg-white text-primary-900 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+          <button 
+          onClick = {calendly}
+          className="bg-white text-primary-900 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
             Book Call
           </button>
         </div>

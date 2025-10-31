@@ -15,10 +15,10 @@ CORS(app)
 @app.route('/chat', methods = ['POST'])
 def callGemini():
     
-    ai = GeminiAPI()
+    ai = GeminiAPI()  # LlamaGGUF()
     data = r.get_json()
     userMessage = data.get("message")
-    answer = ai.genAiModel(userMessage, API_KEY)
+    answer = ai.genAiModel(userMessage, API_KEY)  # ai.llama(userMessage)
     return j({"reply": answer}) 
     # return answer
     
