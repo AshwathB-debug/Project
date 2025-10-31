@@ -15,11 +15,8 @@ import Chatbot from "./Chatbot";
 import { useState } from 'react';
 
 
-function mobileMenuButton() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    setIsMenuOpen(!isMenuOpen);
-}
+const [isOpen, setIsOpen] = useState(false);
+const mobileMenuButton = () => setIsOpen(!isOpen);
 
 function calendly() {
   window.open("https://calendly.com/kolabrata/discover-kolabrata")
