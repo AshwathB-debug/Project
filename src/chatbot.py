@@ -18,7 +18,8 @@ def callGemini():
     ai = GeminiAPI()  # LlamaGGUF()
     data = r.get_json()
     userMessage = data.get("message")
-    answer = ai.genAiModel(userMessage, API_KEY)  # ai.llama(userMessage)
+    prompt = f'Based on the following information: {ai.knowledgeBase()}. Answer this question {userMessage}'
+    answer = ai.genAiModel(prompt, API_KEY)  # ai.llama(userMessage)
     return j({"reply": answer}) 
     # return answer
     

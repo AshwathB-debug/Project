@@ -214,7 +214,7 @@ function App() {
       role: "Operations Lead",
       company: "Mid-size Manufacturer",
       content:
-        "Kolabrate's AI solution reduced our inventory processing time by 60% and eliminated manual data entry errors completely.",
+        "Kolabrata's AI solution reduced our inventory processing time by 60% and eliminated manual data entry errors completely.",
       image: "https://randomuser.me/api/portraits/men/1.jpg",
     },
     {
@@ -244,7 +244,7 @@ function App() {
             <div className="flex items-center">
               <img onClick = {reload}
                 src={logo}
-                alt="Kolabrate.co"
+                alt="Kolabrata.co"
                 className=" sm:h-24 md:h-32 h-24 w-auto object-contain transition-all duration-200 filter drop-shadow-sm"
               />
             </div>
@@ -354,7 +354,7 @@ function App() {
                   onInit={(typewriter) => {
                     typewriter
                       .typeString(
-                        "Kolabrate designs and deploys AI accelerators that slash costs and cycle‑times for manufacturers, distributors and logistics providers—without the enterprise‑grade price tag."
+                        "Kolabrata designs and deploys AI accelerators that slash costs and cycle‑times for manufacturers, distributors and logistics providers—without the enterprise‑grade price tag."
                       )
                       .start();
                   }}
@@ -819,7 +819,7 @@ function App() {
             Ready to Move Freight Smarter?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let's explore how Kolabrate can streamline your supply-chain
+            Let's explore how Kolabrata can streamline your supply-chain
             operations with AI-powered automation. Schedule a discovery call
             today to begin your journey towards autonomous operations.
           </p>
@@ -834,7 +834,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-primary-950 text-white py-8">
         <div className="container text-center">
-          <p>© 2025 Kolabrate.co. All Rights Reserved.</p>
+          <p>© 2025 Kolabrata.co. All Rights Reserved.</p>
           <div className="mt-4">
             <a
               href="#"

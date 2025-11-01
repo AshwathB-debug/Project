@@ -1,8 +1,7 @@
 # For testing purposes
 import google.generativeai as genai
-import os
-from dotenv import load_dotenv
-
+# from dotenv import load_dotenv
+# import os
 
 # load_dotenv()
 # API_KEY = os.getenv("API_KEY")
@@ -10,14 +9,14 @@ from dotenv import load_dotenv
 
 class GeminiAPI:
     
-    # Join words in the sentence from the generated output
-    def joinWordsInOutput(self, output):
+    # # Join words in the sentence from the generated output
+    # def joinWordsInOutput(self, output):
     
-        arr = []
-        for word in output:
-            arr.append(word.text)
-        response = " ".join(arr)
-        return response
+    #     arr = []
+    #     for word in output:
+    #         arr.append(word.text)
+    #     response = "".join(arr)
+    #     return response
 
 
     # Set up the model
@@ -27,7 +26,7 @@ class GeminiAPI:
             "temperature": 0.2,
             "top_p": 0.9,
             "top_k": 0,
-            "max_output_tokens": 200,
+            "max_output_tokens": 1000,
         }
         return generation_config
 
@@ -57,7 +56,14 @@ class GeminiAPI:
             }
         ]
         return safety_settings
-
+    
+    
+    def knowledgeBase(self):
+        
+        with open('websitecontent.txt', 'r', encoding = 'utf-8') as f:
+            content = f.read()
+        return content
+    
 
     def genAiModel(self, chat, apiKey):
         
@@ -69,20 +75,21 @@ class GeminiAPI:
                 generation_config = self.generationConfig(),
                 safety_settings = self.safetySettings()
             )
-            convo = model.start_chat(history = [])
-            output = convo.send_message(chat, stream = True)
-            return self.joinWordsInOutput(output)  
+            
+            output = model.start_chat(history = []).send_message(chat)
+            return output.text
 
         except Exception as e:
             print(f"An error occurred {e}")
             return None
         
+        
 # gemini-1.5-flash-latest
-
 
 # if __name__ == "__main__":
 #     model = GeminiAPI()
 #     while True:
 #         user_input = input("You: ")
-#         reply = model.genAiModel(user_input, API_KEY)
+#         prompt = f'Based on the following information: {model.knowledgeBase()}. Answer this question {user_input}'
+#         reply = model.genAiModel(prompt, API_KEY)
 #         print("Bot:", reply)
