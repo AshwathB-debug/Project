@@ -1,6 +1,6 @@
-WEBSITE CONTENT - KOLABRATE.CO
+WEBSITE CONTENT - KOLABRATA.CO
 ================================================================================
-Scraped on: 2025-11-01 18:04:23
+Scraped on: 2025-11-01 18:15:41
 ================================================================================
 
 
@@ -9,7 +9,7 @@ HERO SECTION
 ================================================================================
 
 AI Agency for Supply‑Chain & Logistics SMBs
-Kolabrate designs and deploys AI accelerators that slash costs and cycle‑times for manufacturers, distributors and logisti
+Kolabrata designs and deploys AI accelerators that slash costs and cycle‑times for manufacturers, distributors and logis
 Get 15‑min Discovery Call
 
 
@@ -91,3 +91,4 @@ Mobile camera detects defects and logs them in seconds.
 Computer vision
 Defect detection
 Automated logging
+

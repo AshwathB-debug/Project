@@ -104,7 +104,7 @@ try:
     # Write to file with better formatting
     print("\nWriting content to file...")
     with open('websitecontent.txt', 'w', encoding='utf-8') as file:
-        file.write("WEBSITE CONTENT - KOLABRATE.CO\n")
+        file.write("WEBSITE CONTENT - KOLABRATA.CO\n")
         file.write("="*80 + "\n")
         file.write(f"Scraped on: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
         file.write("="*80 + "\n\n")
