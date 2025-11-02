@@ -57,13 +57,6 @@ class GeminiAPI:
         ]
         return safety_settings
     
-    
-    def knowledgeBase(self):
-        
-        with open('websitecontent.txt', 'r', encoding = 'utf-8') as f:
-            content = f.read()
-        return content
-    
 
     def genAiModel(self, chat, apiKey):
         

@@ -32,7 +32,7 @@ const Chatbot: React.FC = () => {
           right: '20px',
           width: '60px',
           height: '60px',
-          backgroundColor: '#7a63d9',
+          backgroundColor: '#392499ff',
           color: 'white',
           fontSize: '30px',
           display: 'flex',
@@ -77,7 +77,7 @@ const Chatbot: React.FC = () => {
           {/* Header */}
           <div
             style={{
-              backgroundColor: '#7a63d9',
+              backgroundColor: '#392499ff',
               color: 'white',
               padding: '15px',
               borderTopLeftRadius: '15px',
@@ -172,7 +172,7 @@ const Chatbot: React.FC = () => {
                 height: '50px',
                 padding: '0',
                 borderRadius: '50%',
-                backgroundColor: '#7a63d9',
+                backgroundColor: '#392499ff',
                 color: 'white',
                 border: 'none',
                 cursor: 'pointer',
